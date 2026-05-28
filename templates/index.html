@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fake News Detector AI — Fake News Detector</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav class="navbar">
+    <div class="nav-logo">🔍 Fake News Detector AI</div>
+    <div class="nav-links">
+      <a href="{{ url_for('index') }}" class="nav-link active">Home</a>
+      <a href="{{ url_for('about') }}" class="nav-link">About</a>
+    </div>
+  </nav>
+
+  <!-- ── HEADER ── -->
+  <header>
+    <div class="logo">🔍 Fake News Detector AI</div>
+    <p class="subtitle">Deep Learning Fake News Detection — RNN · CNN · BERT · <strong>GNN ★</strong></p>
+    <p class="header-desc">Powered by Graph Neural Networks for industry-leading 94.8% accuracy</p>
+  </header>
+
+  <!-- ── MAIN ── -->
+  <main>
+    <section class="input-section">
+      <label class="input-label">📰 Enter News Text</label>
+      <textarea id="newsInput" placeholder="Paste a news headline or article here…" rows="5"></textarea>
+      <button id="analyzeBtn" onclick="analyze()">
+        <i class="fa-solid fa-magnifying-glass"></i> &nbsp;Analyze News
+      </button>
+    </section>
+
+    <section class="results-section" id="results" style="display:none">
+      <h2>Detection Results</h2>
+      <div class="model-cards" id="modelCards"></div>
+      <div class="verdict" id="verdict"></div>
+    </section>
+
+    <section class="benchmarks">
+      <h2>📊 Model Performance Comparison</h2>
+      <div class="bench-table">
+        <div class="bench-row header">
+          <span>Model</span><span>Accuracy</span><span>F1 Score</span><span>Status</span>
+        </div>
+        <div class="bench-row">
+          <span><i class="fa-solid fa-rotate fa-sm" style="color:#60a5fa"></i> RNN</span>
+          <span>82.3%</span><span>82.2%</span><span class="tag">Good</span>
+        </div>
+        <div class="bench-row">
+          <span><i class="fa-solid fa-layer-group fa-sm" style="color:#a78bfa"></i> CNN</span>
+          <span>85.7%</span><span>85.5%</span><span class="tag">Better</span>
+        </div>
+        <div class="bench-row">
+          <span><i class="fa-solid fa-brain fa-sm" style="color:#34d399"></i> BERT</span>
+          <span>91.2%</span><span>91.2%</span><span class="tag">Great</span>
+        </div>
+        <div class="bench-row best">
+          <span><i class="fa-solid fa-diagram-project fa-sm" style="color:#facc15"></i> GNN ★</span>
+          <span>94.8%</span><span>94.7%</span><span class="tag best-tag">BEST</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CONNECT WITH US ── -->
+    <section class="connect-section">
+      <h2>🤝 Connect With Us</h2>
+      <p class="connect-desc">Follow the project, explore the source code, or get in touch on LinkedIn.</p>
+      <div class="connect-cards">
+        <a href="https://github.com/vanshgoswami000" target="_blank" class="connect-card github-card">
+          <i class="fa-brands fa-github connect-icon"></i>
+          <div class="connect-info">
+            <span class="connect-platform">GitHub</span>
+            <span class="connect-handle">@vanshgoswami</span>
+          </div>
+          <i class="fa-solid fa-arrow-up-right-from-square connect-arrow"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/vansh-goswami-4452b5358" target="_blank" class="connect-card linkedin-card">
+          <i class="fa-brands fa-linkedin connect-icon"></i>
+          <div class="connect-info">
+            <span class="connect-platform">LinkedIn</span>
+            <span class="connect-handle">Vansh Goswami</span>
+          </div>
+          <i class="fa-solid fa-arrow-up-right-from-square connect-arrow"></i>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-logo">🔍 Fake News Detector AI</div>
+      <p class="footer-credit">Designed and developed by <strong>Vansh Goswami</strong> with ❤️ help Rishav Saini and Mukul Kumar</p>
+      <p class="footer-copy">Copyright &copy; 2026 VG. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="{{ url_for('index') }}">Home</a>
+        <span>·</span>
+        <a href="{{ url_for('about') }}">About</a>
+        <span>·</span>
+        <a href="https://github.com/vanshgoswami000" target="_blank">
+          <i class="fa-brands fa-github"></i> GitHub
+        </a>
+        <span>·</span>
+        <a href="https://www.linkedin.com/in/vansh-goswami-4452b5358" target="_blank">
+          <i class="fa-brands fa-linkedin"></i> LinkedIn
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

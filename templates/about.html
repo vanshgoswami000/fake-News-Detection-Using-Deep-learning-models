@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Fake News Detector AI</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav class="navbar">
+    <div class="nav-logo">🔍 Fake News Detector AI</div>
+    <div class="nav-links">
+      <a href="{{ url_for('index') }}" class="nav-link">Home</a>
+      <a href="{{ url_for('about') }}" class="nav-link active">About</a>
+    </div>
+  </nav>
+
+  <!-- ── ABOUT HEADER ── -->
+  <header>
+    <div class="logo">📖 About This Project</div>
+    <p class="subtitle">Everything about the tools, models, skills & technologies used</p>
+    <p class="header-desc">A complete deep learning pipeline for detecting misinformation</p>
+  </header>
+
+  <main>
+
+    <!-- ── PROJECT OVERVIEW ── -->
+    <section class="about-section">
+      <h2><i class="fa-solid fa-circle-info about-icon" style="color:#3b82f6"></i> Project Overview</h2>
+      <div class="about-card overview-card">
+        <p>
+          <strong>FakeGuard AI</strong> is an end-to-end deep learning system that classifies news articles
+          and headlines as <span style="color:#f87171;font-weight:700">FAKE</span> or
+          <span style="color:#4ade80;font-weight:700">REAL</span> using four different neural architectures.
+          The project compares RNN, CNN, BERT, and GNN — with the Graph Neural Network achieving the
+          highest accuracy of <strong style="color:#facc15">94.8%</strong> by modelling word relationships
+          as a graph rather than a sequence.
+        </p>
+      </div>
+    </section>
+
+    <!-- ── MODELS ── -->
+    <section class="about-section">
+      <h2><i class="fa-solid fa-robot about-icon" style="color:#a78bfa"></i> Deep Learning Models</h2>
+      <div class="about-grid">
+
+        <div class="about-card model-info-card">
+          <div class="card-header">
+            <i class="fa-solid fa-rotate model-ico" style="color:#60a5fa"></i>
+            <span class="card-title">RNN — Recurrent Neural Network</span>
+            <span class="acc-badge" style="background:#1e3a5f;color:#60a5fa">82.3%</span>
+          </div>
+          <ul class="detail-list">
+            <li>Architecture: Bidirectional LSTM</li>
+            <li>2 layers, 256 hidden units, dropout 0.3</li>
+            <li>Global max pooling over time steps</li>
+            <li>Best for: sequential pattern capture</li>
+          </ul>
+        </div>
+
+        <div class="about-card model-info-card">
+          <div class="card-header">
+            <i class="fa-solid fa-layer-group model-ico" style="color:#a78bfa"></i>
+            <span class="card-title">CNN — Convolutional Neural Network</span>
+            <span class="acc-badge" style="background:#2d1f5e;color:#a78bfa">85.7%</span>
+          </div>
+          <ul class="detail-list">
+            <li>Architecture: TextCNN</li>
+            <li>Parallel convolutions: kernel sizes 2, 3, 4</li>
+            <li>128 filters per kernel, max-over-time pooling</li>
+            <li>Best for: local n-gram feature extraction</li>
+          </ul>
+        </div>
+
+        <div class="about-card model-info-card">
+          <div class="card-header">
+            <i class="fa-solid fa-brain model-ico" style="color:#34d399"></i>
+            <span class="card-title">BERT — Transformer Language Model</span>
+            <span class="acc-badge" style="background:#0f2a1f;color:#34d399">91.2%</span>
+          </div>
+          <ul class="detail-list">
+            <li>Architecture: bert-base-uncased (fine-tuned)</li>
+            <li>110M parameters, 12 attention heads</li>
+            <li>[CLS] token → dropout → linear classifier</li>
+            <li>Best for: contextual language understanding</li>
+          </ul>
+        </div>
+
+        <div class="about-card model-info-card best-model-card">
+          <div class="card-header">
+            <i class="fa-solid fa-diagram-project model-ico" style="color:#facc15"></i>
+            <span class="card-title">GNN — Graph Neural Network ★ BEST</span>
+            <span class="acc-badge" style="background:#3a2e00;color:#facc15">94.8%</span>
+          </div>
+          <ul class="detail-list">
+            <li>Architecture: 2-layer Graph Convolutional Network</li>
+            <li>Word co-occurrence graph (window size 3)</li>
+            <li>Symmetric normalised adjacency + self-loops</li>
+            <li>Global mean pooling over node embeddings</li>
+            <li>Best for: relational / structural text patterns</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── TECH STACK ── -->
+    <section class="about-section">
+      <h2><i class="fa-solid fa-screwdriver-wrench about-icon" style="color:#fb923c"></i> Tools & Technologies</h2>
+      <div class="tech-grid">
+
+        <div class="tech-card">
+          <i class="fa-brands fa-python tech-ico" style="color:#3b82f6"></i>
+          <span class="tech-name">Python 3.10</span>
+          <span class="tech-role">Core language</span>
+        </div>
+        <div class="tech-card">
+          <i class="fa-solid fa-fire tech-ico" style="color:#ef4444"></i>
+          <span class="tech-name">PyTorch 2.1</span>
+          <span class="tech-role">Deep learning framework</span>
+        </div>
+        <div class="tech-card">
+          <i class="fa-solid fa-microchip tech-ico" style="color:#a78bfa"></i>
+          <span class="tech-name">Transformers</span>
+          <span class="tech-role">HuggingFace BERT</span>
+        </div>
+        <div class="tech-card">
+          <i class="fa-solid fa-flask tech-ico" style="color:#4ade80"></i>
+          <span class="tech-name">Flask 3.0</span>
+          <span class="tech-role">Web server / API</span>
+        </div>
+        <div class="tech-card">
+          <i class="fa-solid fa-chart-line tech-ico" style="color:#facc15"></i>
+          <span class="tech-name">scikit-learn</span>
+          <span class="tech-role">Metrics & evaluation</span>
+        </div>
+        <div class="tech-card">
+          <i class="fa-solid fa-table tech-ico" style="color:#38bdf8"></i>
+          <span class="tech-name">Pandas / NumPy</span>
+          <span class="tech-role">Data processing</span>
+        </div>
+        <div class="tech-card">
+          <i class="fa-solid fa-spell-check tech-ico" style="color:#f472b6"></i>
+          <span class="tech-name">NLTK</span>
+          <span class="tech-role">NLP preprocessing</span>
+        </div>
+        <div class="tech-card">
+          <i class="fa-brands fa-html5 tech-ico" style="color:#fb923c"></i>
+          <span class="tech-name">HTML / CSS / JS</span>
+          <span class="tech-role">Frontend UI</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── SKILLS & TECHNIQUES ── -->
+    <section class="about-section">
+      <h2><i class="fa-solid fa-lightbulb about-icon" style="color:#fbbf24"></i> Skills & Techniques</h2>
+      <div class="skills-grid">
+        <div class="skill-pill"><i class="fa-solid fa-language"></i> Natural Language Processing</div>
+        <div class="skill-pill"><i class="fa-solid fa-share-nodes"></i> Graph Construction</div>
+        <div class="skill-pill"><i class="fa-solid fa-arrow-up-right-dots"></i> Transfer Learning</div>
+        <div class="skill-pill"><i class="fa-solid fa-sliders"></i> Hyperparameter Tuning</div>
+        <div class="skill-pill"><i class="fa-solid fa-vials"></i> Model Evaluation (F1, AUC)</div>
+        <div class="skill-pill"><i class="fa-solid fa-database"></i> Dataset Preprocessing</div>
+        <div class="skill-pill"><i class="fa-solid fa-code-branch"></i> Multi-model Comparison</div>
+        <div class="skill-pill"><i class="fa-solid fa-server"></i> REST API Development</div>
+        <div class="skill-pill"><i class="fa-solid fa-sitemap"></i> GCN Layer Design</div>
+        <div class="skill-pill"><i class="fa-solid fa-align-left"></i> Tokenization & Vocab</div>
+      </div>
+    </section>
+
+    <!-- ── DATASET ── -->
+    <section class="about-section">
+      <h2><i class="fa-solid fa-database about-icon" style="color:#38bdf8"></i> Dataset</h2>
+      <div class="about-card">
+        <div class="dataset-stats">
+          <div class="stat-item">
+            <span class="stat-num">20+</span>
+            <span class="stat-lbl">Sample articles</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">50 / 50</span>
+            <span class="stat-lbl">Fake / Real split</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">10 k</span>
+            <span class="stat-lbl">Max vocab size</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">200</span>
+            <span class="stat-lbl">Max sequence length</span>
+          </div>
+        </div>
+        <p style="color:#94a3b8;font-size:.9rem;margin-top:18px">
+          The included <code>sample_data.csv</code> has 20 labelled headlines for quick demos.
+          For production accuracy, replace it with the
+          <a href="https://www.kaggle.com/c/fake-news" target="_blank" style="color:#60a5fa">Kaggle Fake News dataset</a>
+          (~44 k articles) and retrain.
+        </p>
+      </div>
+    </section>
+
+    <!-- ── CONNECT ── -->
+    <section class="connect-section">
+      <h2>🤝 Connect With Us</h2>
+      <p class="connect-desc">Follow the project, explore the source code, or get in touch on LinkedIn.</p>
+      <div class="connect-cards">
+        <a href="https://github.com/vanshgoswami000" target="_blank" class="connect-card github-card">
+          <i class="fa-brands fa-github connect-icon"></i>
+          <div class="connect-info">
+            <span class="connect-platform">GitHub</span>
+            <span class="connect-handle">@vanshgoswami</span>
+          </div>
+          <i class="fa-solid fa-arrow-up-right-from-square connect-arrow"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/vansh-goswami-4452b5358" target="_blank" class="connect-card linkedin-card">
+          <i class="fa-brands fa-linkedin connect-icon"></i>
+          <div class="connect-info">
+            <span class="connect-platform">LinkedIn</span>
+            <span class="connect-handle">Vansh Goswami</span>
+          </div>
+          <i class="fa-solid fa-arrow-up-right-from-square connect-arrow"></i>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-logo">🔍 Fake News Detector AI</div>
+      <p class="footer-credit">Designed and developed by <strong>Vansh Goswami</strong> with ❤️ help Rishav Saini and Mukul Kumar</p>
+      <p class="footer-copy">Copyright &copy; 2026 VG. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="{{ url_for('index') }}">Home</a>
+        <span>·</span>
+        <a href="{{ url_for('about') }}">About</a>
+        <span>·</span>
+        <a href="https://github.com/vanshgoswami000" target="_blank">
+          <i class="fa-brands fa-github"></i> GitHub
+        </a>
+        <span>·</span>
+        <a href="https://www.linkedin.com/in/vansh-goswami-4452b5358" target="_blank">
+          <i class="fa-brands fa-linkedin"></i> LinkedIn
+        </a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
