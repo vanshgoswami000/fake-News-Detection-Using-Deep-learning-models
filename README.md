@@ -1,59 +1,140 @@
-# 📰 Fake News Detection System
+📰 Fake News Detector AI
+AI-powered Fake News Detection web application built using Flask, PyTorch, and Transformers to classify news articles as Real or Fake using Deep Learning and NLP techniques.
+🚀 Live Demo
 
-A deep learning project that detects fake news using multiple models:
-- **RNN** (Recurrent Neural Network)
-- **CNN** (Convolutional Neural Network)
-- **BERT** (Bidirectional Encoder Representations from Transformers)
-- **GNN** (Graph Neural Network) ← Best Accuracy Model ✅
+🔗 https://fake-news-detector-sksc.onrender.com/
 
-## 📁 Project Structure
+📂 GitHub Repository
 
-```
-fake_news_detection/
+🔗 https://github.com/vanshgoswami000/fake-News-Detection-Using-Deep-learning-models
+
+✨ Features
+- Fake vs Real news classification
+- Deep Learning based prediction
+- NLP preprocessing pipeline
+- Interactive Flask web interface
+- PyTorch + Transformers integration
+- Responsive UI design
+- Real-time prediction system
+
+🛠️ Tech Stack
+
+Frontend
+
+- HTML
+- CSS
+- JavaScript
+
+Backend
+
+- Flask
+- Python
+
+Machine Learning / Deep Learning
+
+- PyTorch
+- Transformers
+- Scikit-learn
+- NumPy
+- Pandas
+
+Deployment
+
+- Render
+- GitHub
+📁 Project Structure
+
+Fake-news-Detector/
 │
-├── models/
-│   ├── rnn_model.py        # RNN-based fake news detector
-│   ├── cnn_model.py        # CNN-based fake news detector
-│   ├── bert_model.py       # BERT-based fake news detector
-│   └── gnn_model.py        # GNN-based fake news detector (Best)
-│
-├── data/
-│   ├── dataset.py          # Dataset loader and preprocessor
-│   └── sample_data.csv     # Sample dataset
-│
-├── utils/
-│   ├── preprocess.py       # Text preprocessing utilities
-│   └── evaluate.py         # Model evaluation metrics
-│
-├── static/
-│   ├── css/style.css       # Web UI styles
-│   └── js/app.js           # Frontend JavaScript
-│
+├── app.py
+├── requirements.txt
+├── runtime.txt
 ├── templates/
-│   └── index.html          # Web interface
-│
-├── train.py                # Train all models
-├── predict.py              # Run predictions
-├── app.py                  # Flask web application
-├── requirements.txt        # Dependencies
-└── README.md               # This file
-```
+├── static/
+├── models/
+├── utils/
+├── data/
+├── README.md
+└── venv/
+⚙️ Installation
 
-## 🚀 Quick Start
+1️⃣ Clone Repository
 
-```bash
+git clone https://github.com/vanshgoswami000/fake-News-Detection-Using-Deep-learning-models.git
+
+2️⃣ Move into Project Folder
+
+cd fake-News-Detection-Using-Deep-learning-models
+
+3️⃣ Create Virtual Environment
+
+python -m venv venv
+
+4️⃣ Activate Virtual Environment
+
+Windows
+
+venv\Scripts\activate
+
+Linux / Mac
+
+source venv/bin/activate
+
+5️⃣ Install Dependencies
+
 pip install -r requirements.txt
-python train.py
+
+▶️ Run the Application
+
 python app.py
-```
 
-Then open: http://localhost:5000
+Open browser:
 
-## 🏆 Model Accuracy
+http://127.0.0.1:5000
 
-| Model | Accuracy |
-|-------|----------|
-| RNN   | 82.3%    |
-| CNN   | 85.7%    |
-| BERT  | 91.2%    |
-| **GNN** | **94.8%** ← Best |
+🧠 Machine Learning Workflow
+
+1. Data Collection
+2. Data Preprocessing
+3. Text Cleaning
+4. Tokenization
+5. Feature Extraction
+6. Deep Learning Model Training
+7. Prediction & Classification
+8. Web Deployment
+
+📸 Screenshots
+
+- Homepage
+- Prediction Result
+- UI Design
+- Model Output
+
+🌐 Deployment
+
+Project deployed using:
+- Render
+- GitHub
+
+🔮 Future Improvements
+
+- Better UI/UX
+- News API integration
+- User authentication
+- Multi-language support
+- Improved model accuracy
+- Real-time fact-checking
+
+👨‍💻 Author
+
+Vansh Goswami
+
+GitHub- https://github.com/vanshgoswami000
+LinkedIn- https://www.linkedin.com/in/vansh-goswami-4452b5358
+
+📜 License
+This project is developed for educational and learning purposes.
+
+⭐ Support
+
+If you like this project, give it a ⭐ on GitHub.
