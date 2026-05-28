@@ -102,14 +102,6 @@ http://127.0.0.1:5000
 6. Deep Learning Model Training
 7. Prediction & Classification
 8. Web Deployment
-
-📸 Screenshots
-
-- Homepage
-- Prediction Result
-- UI Design
-- Model Output
-
 🌐 Deployment
 
 Project deployed using:
@@ -118,7 +110,7 @@ Project deployed using:
 
 🔮 Future Improvements
 
-- Better UI/UX
+- make hybrid model
 - News API integration
 - User authentication
 - Multi-language support
@@ -127,7 +119,7 @@ Project deployed using:
 
 👨‍💻 Author
 
-Vansh Goswami
+**Vansh Goswami**
 
 GitHub- https://github.com/vanshgoswami000
 LinkedIn- https://www.linkedin.com/in/vansh-goswami-4452b5358
