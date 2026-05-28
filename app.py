@@ -39,8 +39,8 @@ def _try_load(name, builder):
     return None
 
 MODELS["rnn"]  = _try_load("rnn", build_rnn)
-MODELS["cnn"]  = _try_load("cnn", build_cnn)
-MODELS["gnn"]  = _try_load("gnn", build_gnn)
+#MODELS["cnn"]  = _try_load("cnn", build_cnn)
+#MODELS["gnn"]  = _try_load("gnn", build_gnn)
 
 
 # ── Routes ────────────────────────────────────────────────────────────────────
@@ -80,24 +80,24 @@ def predict():
         }
 
     # CNN
-    if MODELS["cnn"]:
-        x = torch.tensor([text_to_indices(text, VOCAB)],
-                         dtype=torch.long).to(DEVICE)
-        with torch.no_grad():
-            probs = F.softmax(MODELS["cnn"](x), dim=1)[0]
-        pred = int(probs.argmax())
-        results["cnn"] = {
-            "label": "FAKE" if pred == 1 else "REAL",
-            "fake_prob": round(float(probs[1]) * 100, 1),
-            "real_prob": round(float(probs[0]) * 100, 1),
-            "accuracy": 85.7,
-        }
+   # if MODELS["cnn"]:
+    #    x = torch.tensor([text_to_indices(text, VOCAB)],
+     #                    dtype=torch.long).to(DEVICE)
+      #  with torch.no_grad():
+       #     probs = F.softmax(MODELS["cnn"](x), dim=1)[0]
+        #pred = int(probs.argmax())
+        #results["cnn"] = {
+         #   "label": "FAKE" if pred == 1 else "REAL",
+          #  "fake_prob": round(float(probs[1]) * 100, 1),
+           # "real_prob": round(float(probs[0]) * 100, 1),
+            #"accuracy": 85.7,
+        #}
 
     # GNN (BEST)
-    if MODELS["gnn"]:
-        graph = build_graph_features(text, VOCAB)
-        res = gnn_predict_single(MODELS["gnn"], graph, VOCAB, DEVICE)
-        results["gnn"] = {**res, "accuracy": 94.8}
+    #if MODELS["gnn"]:
+     #   graph = build_graph_features(text, VOCAB)
+      #  res = gnn_predict_single(MODELS["gnn"], graph, VOCAB, DEVICE)
+       # results["gnn"] = {**res, "accuracy": 94.8}
 
     if not results:
         # Demo mode — return simulated predictions
